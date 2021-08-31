@@ -17,8 +17,8 @@
                             {!! Form::open(['route' => 'todos.store', 'method' => 'POST']) !!}
                             {{ csrf_field() }}
                             <div class="row">
-                                {{ Form::text('newTodo', null, ['class' => 'form-control col-8 mr-5']) }}
-                                {{ Form::date('newDeadline', null, ['class' => 'mr-5']) }}
+                                {{ Form::text('newTodo', null, ['class' => 'form-control col-8 mr-5 mb-2']) }}
+                                {{ Form::date('newDeadline', null, ['class' => 'mr-5 mb-2']) }}
                                 {{ Form::submit('新規追加', ['class' => 'btn btn-primary']) }}
                             </div>
                             {!! Form::close() !!}
