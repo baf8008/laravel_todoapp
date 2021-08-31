@@ -24,6 +24,12 @@
                 </div>
             {!! Form::close() !!}
         </div>
+        @if ($errors->has('updateTodo'))
+        <p class="alert alert-danger">{{ $errors->first('updateTodo') }}</p>
+        @endif
+        @if ($errors->has('updateDeadline'))
+        <p class="alert alert-danger">{{ $errors->first('updateDeadline') }}</p>
+        @endif
     </div>
 </body>
 </html>
