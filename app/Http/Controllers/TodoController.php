@@ -62,9 +62,10 @@ class TodoController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'update' => 'required|max:100',
-            'update' => 'required|after:"now"'
+            'updateTodo'     => 'required|max:100',
+            'updateDeadline' => 'required|after:"now"',
         ]);
+
         $todo = Todo::find($id);
         $todo->todo = $request->updateTodo;
         $todo->deadline = $request->updateDeadline;
