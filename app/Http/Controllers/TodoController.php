@@ -29,7 +29,7 @@ class TodoController extends Controller
     {
         $request->validate([
             'newTodo' => 'required|max:100',
-            'newDeadline' => 'nullable|after:"now"'
+            'newDeadline' => 'required|after:"now"'
         ]);
         Todo::create([
             'todo' => $request->newTodo,
@@ -63,7 +63,7 @@ class TodoController extends Controller
     {
         $request->validate([
             'update' => 'required|max:100',
-            'update' => 'nullable|after:"now"'
+            'update' => 'required|after:"now"'
         ]);
         $todo = Todo::find($id);
         $todo->todo = $request->updateTodo;
