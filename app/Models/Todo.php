@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Todo extends Model
 {
@@ -11,6 +12,12 @@ class Todo extends Model
 
     protected $fillable = [
         'todo',
-        'deadline'
+        'deadline',
+        'user_id'
     ];
+
+    public function user()
+	{
+		return $this->belongsTo('App\Models\User');
+	}
 }

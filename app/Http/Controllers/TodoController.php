@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Todo;
+use Illuminate\Support\Facades\Auth;
 
 
 class TodoController extends Controller
@@ -33,8 +34,14 @@ class TodoController extends Controller
         ]);
         Todo::create([
             'todo' => $request->newTodo,
-            'deadline' => $request->newDeadline
+            'deadline' => $request->newDeadline,
+            'user_id' => Auth::user()->id,
         ]);
+        // $todo = new Todo;
+        // $todo->sta = $request->status;
+        // $todo->content = $request->content;
+        // $todo->
+        // $todo->save();
 
         return redirect()->route('todos.index');
     }
