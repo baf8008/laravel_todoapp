@@ -43,7 +43,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function task() {
-	return $this->hasMany("App\Models\Todo", 'user_id', 'id');
-}
+    public function task()
+    {
+        return $this->hasMany("App\Models\Todo", 'user_id', 'id');
+    }
 }
