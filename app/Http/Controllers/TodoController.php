@@ -37,11 +37,6 @@ class TodoController extends Controller
             'deadline' => $request->newDeadline,
             'user_id' => Auth::user()->id,
         ]);
-        // $todo = new Todo;
-        // $todo->sta = $request->status;
-        // $todo->content = $request->content;
-        // $todo->
-        // $todo->save();
 
         return redirect()->route('todos.index');
     }
